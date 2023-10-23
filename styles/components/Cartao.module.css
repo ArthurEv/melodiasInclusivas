@@ -1,0 +1,26 @@
+.cartao{
+    height: 90%;
+    margin: 10px 0;
+}
+
+.cartao p{
+    margin: 0;
+}
+
+.titulo{
+    background-color: #DBA521;
+    border-radius: 30px 30px 0 0;
+    height: 30%;
+    padding-left: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.desc{
+    background-color: white;
+    border-radius: 0 0 30px 30px;
+    height: 70%;
+    padding: 10px;
+    box-sizing: border-box;
+}

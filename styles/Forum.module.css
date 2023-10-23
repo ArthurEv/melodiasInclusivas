@@ -1,0 +1,166 @@
+.caixa{
+    background-color: #FECF4E;
+    border-radius: 50px;
+    width: 60%;
+    box-sizing: border-box;
+    height: 90%;
+    padding: 10px;
+}
+
+.principal{
+    height: 100%;
+    border-radius: 50px;
+}
+
+.cima{
+    height: 15%;
+    border-radius: 40px 40px 0 0;
+    background-color: #DBA521;
+    padding: 5px 20px;
+}
+
+.cima h2{
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.cima h3{
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.baixo{
+    height: 85%;
+    border-radius: 0 0 40px 40px;
+    background-color: white;
+    padding-right: 10px;
+    padding-top: 10px
+}
+
+.chat{
+    height: 85%;
+    overflow-y: scroll;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.chat::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+.chat::-webkit-scrollbar-track {
+    display: none;
+}
+  
+.chat::-webkit-scrollbar-thumb {
+    background-color: #DBA521;
+    border-radius: 50px; 
+}
+
+.chat span{
+    margin-left: 60px;
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+}
+
+.chat img{
+    height: 50px;
+    background-color: #FECF4E;
+    border-radius: 100px;
+    padding: 2px;
+}
+
+.chat p{
+    display: table;
+    padding: 5px 10px;
+    margin: 0 10px 10px;
+    border-radius: 20px;
+    text-align: justify;
+}
+
+.outros, .usuario{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.outros p{
+    background-color: #F2B630;
+    color: white;
+}
+
+.usuario{
+    justify-content: flex-end;
+}
+
+.usuario p{
+    background-color: #FECF4E;
+}
+
+.digitar{
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.digitar input{
+    border: none;
+    background-color: #FFDD81;
+    width: 60%;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+
+.digitar button{
+    border:none;
+    background-color: #DBA521;
+    border-radius: 100px;
+    padding: 10px;
+}
+
+.digitar img{
+    height: 30px;
+}
+
+@media(max-width: 750px){
+    .caixa{
+        margin: 10px 0;
+        width: 90%;
+    }
+}
+
+@media(max-width: 500px){
+    .cima img{
+        height: 50px;
+    }
+
+    .cima h2{
+        font-size: 1.3rem;
+    }
+
+    .cima h3{
+        font-size: 1rem;
+    }
+
+    .chat img{
+        height: 40px;
+    }
+
+    .chat p{
+        font-size: 10px;
+    }
+
+    .chat span{
+        font-size: 0.5rem;
+    }
+
+    .digitar button{
+        padding: 5px;
+    }
+
+    .digitar img{
+        height: 20px;
+    }
+}
+

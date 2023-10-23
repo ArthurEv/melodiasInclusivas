@@ -1,0 +1,75 @@
+.caixa{
+    background-color: #FECF4E;
+    border-radius: 50px;
+    width: 90%;
+    box-sizing: border-box;
+    height: 90%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.caixaTitulo{
+    height: 8%;
+}
+
+.titulo{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+}
+
+.listaCursos{
+    height: 83%;
+    width: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+    overflow-x: hidden;
+}
+
+.listaCursos::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+.listaCursos::-webkit-scrollbar-track {
+    display: none;
+}
+  
+.listaCursos::-webkit-scrollbar-thumb {
+    background-color: #DBA521;
+    border-radius: 50px; 
+}
+
+.caixaBotao{
+    text-align: center;
+}
+
+.caixa button{
+    border: none;
+    background-color: #DBA521;
+    border-radius: 40px;
+    padding: 3px 20px;
+}
+
+.caixa button:hover{
+    transform:scale(1.1);
+}
+
+@media (max-width: 770px){
+    .caixa{
+      margin: 20px 0;
+    }
+
+    .caixaBotao{
+        padding-bottom: 10px;
+    }
+  }
+
+
+@media(max-width:500px){
+    .titulo{
+        font-size: 1.5rem;
+    }
+}
+
+
