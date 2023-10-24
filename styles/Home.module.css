@@ -1,53 +1,47 @@
 .body{
-  height: 100vh;
   background-color: #F2B630;
-}
-
-.row{
-  height: 100%;
-}
-
-.divForm{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .divImagem{
-  text-align: center;
-  display: flex;
-  align-items: center;
+  width: 50%;
 }
 
 .img{
-  width: 80%;
-  min-width: 300px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .acessar{
   background-color: #F2C752;
-  height: 400px;
-  width: 90%;
   border-radius: 30px;
   padding: 10px 30px;
-  box-sizing: border-box;
+  width: 30%;
+  height: 70%;
+  display: flex;
 }
 
-.secaoTitulo{
-  margin: 5px;
+.titulo{
+  color: #815600;
+  margin: 0;
+  text-decoration: underline;
   text-align: center;
 }
 
-.secaoInput{
-  margin: 10px;
-}
-
-.secaoBotao{
+.acessar form{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
+
+.acessar form div{
+  width: 100%;
+} 
 
 .label{
   display: block;
@@ -69,7 +63,6 @@
 
 .input::placeholder {
   color: white;
-  opacity: 1; /* Firefox */
 }
 
 .submit{
@@ -80,7 +73,6 @@
 
 .esqueceu{
   text-decoration: underline;
-  margin: 10px 0;
 }
 
 .cadastrar{
@@ -88,12 +80,22 @@
   border: none;
   border-radius: 20px;
   padding: 5px 20px;
-  display: flex;
-  margin: 20px auto;
 }
 
-.titulo{
-  color: #815600;
-  margin: 0;
-  text-decoration: underline;
+
+@media (max-width:700px){
+  .acessar{
+    width: 80%;
+  }
+}
+
+@media (max-width:600px){
+  .acessar{
+    width: 80%;
+    height: 60%;
+  }
+
+  .divImagem{
+    width: 80%;
+  }
 }

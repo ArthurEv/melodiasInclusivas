@@ -1,5 +1,4 @@
 import Menu from "../components/Menu.js"
-import MenuTeste from "../components/MenuTeste.js"
 import Footer from "../components/Footer.js"
 import Link from "next/link.js"
 import styles from "../styles/Aula.module.css"
@@ -11,7 +10,6 @@ export default function Aulas(){
 
             <div className="menu">
                 <Menu/>
-                <MenuTeste/>
             </div>
 
             <div className="meio">
