@@ -1,6 +1,6 @@
 .caixa{
     background-color: #FECF4E;
-    border-radius: 50px;
+    border-radius: 30px;
     width: 90%;
     height: 90%;
     padding: 10px 20px;
@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .caixa h2{
