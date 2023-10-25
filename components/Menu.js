@@ -1,29 +1,37 @@
-import Link from "next/link"
-import Image from "next/image"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Image from 'next/image';
 import styles from '../styles/components/Menu.module.css'
+import Head from 'next/head';
 
-export default function Menu(){
-    return(
-        <>
-        <nav className={styles.nav}>
-            <div>
-                <h1>Melodias Inclusivas</h1>
-            </div>
-            <div className={styles.links}>
-                <ul>
-                    <li><Link href="/cursos"><Image src="/menu/cursos.png" width={40} height={40}/>Cursos</Link></li>
-                    <li><Link href="/professor"><Image src="/menu/professor.png" width={40} height={40}/>Conversar<br/>com professor</Link></li>
-                    <li><Link href="/foruns"><Image src="/menu/forum.png" width={40} height={40}/>Fórum</Link></li>
-                </ul>
-            </div>
+export default function Menu() {
+  return (
+    <>
 
-            <div>
-                <a className={styles.usuario}>
-                    <img src='/avatares/hipopotamo.png' className={styles.avatar}/>
-                    <p>Nome de usuário</p>
-                </a>
-            </div>
-        </nav>
-        </>
-    )
+      <Navbar expand="lg" className={`${styles.nav} bg-body-tertiary`}>
+        <Container className={styles.container}>
+          <Navbar.Brand href="/cursos" className={styles.titulo}>Melodias Inclusivas</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className={styles.divLinks}>
+            <Nav className={`${styles.links} me-auto`}>
+              <Nav.Link href="/cursos"><Image src="/menu/cursos.png" width={35} height={35} />Cursos</Nav.Link>
+              <Nav.Link href="/professor"><Image src="/menu/professor.png" width={35} height={35} />Conversar<br />com professor</Nav.Link>
+              <Nav.Link href="/foruns"><Image src="/menu/forum.png" width={35} height={35} />Fórum</Nav.Link>
+              <div className={styles.usuario}>
+                <img src='/avatares/hipopotamo.png' className={styles.img} />
+                <NavDropdown title="Nome de usuário" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="atualizar">Atualizar informações</NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item href="/">Sair</NavDropdown.Item>
+                </NavDropdown>
+              </div>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+
+    </>
+  );
 }

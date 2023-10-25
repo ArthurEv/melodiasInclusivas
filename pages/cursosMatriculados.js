@@ -2,24 +2,28 @@ import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import PaginaCursos from "../components/PaginaCursos.js"
 
-export default function cursosMatriculados(){
-    return(
+export default function cursosMatriculados() {
+    return (
         <>
-        <div className="body">
-
-            <div className="menu">
-                <Menu/>
-            </div>
-
-            <div className="meio">
-                <PaginaCursos titulo="Cursos matriculados"/>
-            </div>
-
-            <div className="footer">
-                <Footer/>
-            </div>
+            <header>
+                <title>Cursos disponíveis</title>
+            </header>
             
-        </div>
+            <div className="body">
+
+                <nav>
+                    <Menu />
+                </nav>
+
+                <main>
+                    <PaginaCursos titulo="Cursos matriculados" />
+                </main>
+
+                <footer>
+                    <Footer />
+                </footer>
+
+            </div>
         </>
     )
 }

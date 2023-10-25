@@ -2,25 +2,28 @@ import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import CaixaCurso from "../components/CaixaCursos.js"
 
-export default function Cursos(){
-    return(
+export default function Cursos() {
+    return (
         <>
-        <div className="body">
+            <header>
+                <title>Cursos</title>
+            </header>
 
-            <div className="menu">
-                <Menu/>
-            </div>
+            <div className="body">
+                <nav>
+                    <Menu />
+                </nav>
 
-            <div className="meio">
-                <CaixaCurso titulo="Cursos disponíveis" link="/cursosDisponiveis"/>
-                <CaixaCurso titulo="Cursos matriculados" link="/cursosMatriculados"/>
-            </div>
+                <main>
+                    <CaixaCurso titulo="Cursos disponíveis" link="/cursosDisponiveis" />
+                    <CaixaCurso titulo="Cursos matriculados" link="/cursosMatriculados" />
+                </main>
 
-            <div className="footer">
-                <Footer/>
+                <footer>
+                    <Footer />
+                </footer>
+
             </div>
-            
-        </div>
         </>
     )
 }

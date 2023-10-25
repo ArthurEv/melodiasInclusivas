@@ -1,54 +1,40 @@
 .nav{
-    background-color: #F2B630;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: #614101;
-    font-size: 1.1rem;
+    background-color: #F2B630 !important;
+    height: 100%;
+    padding: 0;
+}
+
+.nav * {
+    color: #614101 !important;
+}
+
+.container{
     height: 100%;
 }
 
-.nav h1{
-    text-shadow: 0.1em 0.1em 0.2em #0000008a;
+
+.titulo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 !important;
     font-family: cursive;
-    font-size: 2.1rem;
 }
 
 .links{
-    width: 45%;
-}
-
-.nav ul{
-    padding: 0;
-    display: flex;
-    align-items: center;
+    margin: 0 !important;
+    width: 100%;
     justify-content: space-around;
-    margin: 0;
-}
-
-.nav li{
-    list-style: none;
-    display: inline-flex;
-}
-
-.nav li a{
-    display: flex;
     align-items: center;
+    background-color: #F2B630;
 }
 
-.nav li:hover{
-    transform: scale(1.05);
-}
-
-.arcodeao{
-    display: none;
-}
 
 .usuario{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.avatar{
+.img{
     width: 50px;
+    height: 50px;
 }

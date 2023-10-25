@@ -2,22 +2,25 @@ import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import CaixaPadrão from "../components/CaixaPadrão.js"
 
-export default function Aulas(){
-    return(
+export default function Aulas() {
+    return (
         <>
-         <div className="body">
+            <header>
+                <title>Aulas</title>
+            </header>
+            
+            <div className="body">
+                <nav>
+                    <Menu />
+                </nav>
 
-            <div className="menu">
-                <Menu/>
-            </div>
+                <main>
+                    <CaixaPadrão titulo="Aulas" link="/aula" />
+                </main>
 
-            <div className="meio">
-                <CaixaPadrão titulo="Aulas" link="/aula"/>
-            </div>
-
-            <div className="footer">
-                <Footer/>
-            </div>
+                <footer>
+                    <Footer />
+                </footer>
 
             </div>
         </>

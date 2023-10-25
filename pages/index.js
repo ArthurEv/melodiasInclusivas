@@ -8,11 +8,9 @@ export default function Home() {
     <>
       <Head>
         <title>Melodias Inclusivas</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={`${styles.body} body`}>
-
         <div className={styles.divImagem}>
           <img className={styles.img} src='/index/logo.png' alt='Logo do site Melodias Inclusivas com animais tocando instrumentos musicais' />
         </div>
