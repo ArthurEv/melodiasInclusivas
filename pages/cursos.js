@@ -1,8 +1,10 @@
 import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import CaixaCurso from "../components/CaixaCursos.js"
+import { useState,useEffect } from "react"
 
 export default function Cursos() {
+
     return (
         <>
             <header>
