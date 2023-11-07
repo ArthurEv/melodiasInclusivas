@@ -2,12 +2,7 @@ import Cartao from "./Cartao.js"
 import styles from "../styles/components/CaixaCursos.module.css"
 import Link from "next/link"
 
-let cursos = [{nome:"Violão",desc:"Aulas sobre violão"},
-                {nome:"Teoria Musical",desc:"Aulas sobre teoria musical"},
-                {nome:"Teclado",desc:"Aulas sobre teclado"}]
-
-
-export default function CaixaCurso({titulo,link}){
+export default function CaixaCurso({titulo,link,cursos}){
     return(
         <>
             <div className={styles.caixa}>
@@ -17,7 +12,7 @@ export default function CaixaCurso({titulo,link}){
 
                 <div className={`${styles.cartoes} row`}>
                 {cursos.map((curso) => (
-                    <div className="col-md-4"><Cartao link="/aulas" nome={curso.nome} desc={curso.desc}/></div>
+                    <div className="col-md-4"><Cartao link="/aulas" nome={curso.titulo} desc={curso.descricao}/></div>
                     ))}  
                 </div>
 
