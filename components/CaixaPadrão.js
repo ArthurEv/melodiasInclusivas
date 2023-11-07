@@ -1,9 +1,7 @@
 import Cartao from "./Cartao"
 import styles from "../styles/components/CaixaPadrão.module.css"
 
-let cursos = [{nome:"Titulo",desc:"Descrição"},{nome:"Titulo",desc:"Descrição"},{nome:"Titulo",desc:"Descrição"},]
-
-export default function CaixaPadrão({titulo,link}){
+export default function CaixaPadrão({titulo,link,array}){
     return(
         <>
             <div className={styles.caixa}>
@@ -12,13 +10,9 @@ export default function CaixaPadrão({titulo,link}){
                 </div>
                 
                 <div className={styles.listaCursos}>                
-                    {cursos.map((curso) => (
+                    {array.map((aulas) => (
                         <div>
-                            <div className="col-md"><Cartao link={link} nome={curso.nome} desc={curso.desc}/></div>
-                            <div className="col-md"><Cartao link={link} nome={curso.nome} desc={curso.desc}/></div>
-                            <div className="col-md"><Cartao link={link} nome={curso.nome} desc={curso.desc}/></div>
-                            <div className="col-md"><Cartao link={link} nome={curso.nome} desc={curso.desc}/></div>
-                            <div className="col-md"><Cartao link={link} nome={curso.nome} desc={curso.desc}/></div>
+                            <div className="col-md"><Cartao link={link} nome={aulas.titulo} desc={aulas.descricao}/></div>
                         </div>
                     ))} 
                 </div> 

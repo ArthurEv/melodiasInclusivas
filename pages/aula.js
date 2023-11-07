@@ -2,12 +2,27 @@ import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import Link from "next/link.js"
 import styles from "../styles/Aula.module.css"
+import { useState, useEffect } from "react"
+import axios from "axios"
 
-export default function Aulas() {
+export default function Aula() {
+
+    let [aula, setAula] = useState([])
+
+    useEffect(() => {
+        obtemAula()
+    }, [])
+
+    const obtemAula = () => {
+        axios.get('http://127.0.0.1:5000/aula/1/1').then((response) => {
+             setAula(response.data)
+        })
+    }
+
     return (
         <>
             <header>
-                <title>Aula: título</title>
+                <title>Aula: {aula.titulo}</title>
             </header>
 
             <div className="body">
@@ -18,9 +33,9 @@ export default function Aulas() {
                 <main>
                     <div className={styles.caixa}>
 
-                        <h2>Noções iniciais do violão</h2>
+                        <h2>{aula.titulo}</h2>
 
-                        <p>Descrição: Nesta aula você irá aprender as noções básicas do violão, como o apoio e a função das mãos, assim como as partes do instrumento</p>
+                        <p>{aula.descricao}</p>
 
                         <section>
                             <video src="" type="video/mp4"></video>

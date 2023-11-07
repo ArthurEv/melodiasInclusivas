@@ -4,9 +4,25 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'next/image';
 import styles from '../styles/components/Menu.module.css'
-import Head from 'next/head';
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 export default function Menu() {
+
+  // let [aluno, setAluno] = useState([])
+
+  // useEffect(() => {
+  //     obtemAluno()
+  // }, [])
+
+  // const obtemAluno = () => {
+  //     axios.get('http://127.0.0.1:5000/aluno/1').then((response) => {
+  //          setAluno(response.data)
+  //          console.log(aluno[0].nome)
+           
+  //     })
+  // }
+
   return (
     <>
 
@@ -21,7 +37,7 @@ export default function Menu() {
               <Nav.Link href="/foruns"><Image src="/menu/forum.png" width={35} height={35} />Fórum</Nav.Link>
               <div className={styles.usuario}>
                 <img src='/avatares/hipopotamo.png' className={styles.img} />
-                <NavDropdown title="Nome de usuário" id="basic-nav-dropdown">
+                <NavDropdown title="nome de usuário" id="basic-nav-dropdown">
                   <NavDropdown.Item href="atualizar">Atualizar informações</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/">Sair</NavDropdown.Item>
