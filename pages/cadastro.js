@@ -45,7 +45,7 @@ export default function Home() {
 
       <div className={styles.body}>
         <div className={styles.cadastro}>
-          <form  onSubmit={cadastrar}>
+          <form onSubmit={cadastrar}>
             <h2 className={styles.titulo}>Cadastro</h2>
 
             <label className={styles.label} for='nome'><Image src="/cadastro/pessoa.png" width={25} height={25} />Nome completo</label>
