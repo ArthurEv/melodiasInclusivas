@@ -12,7 +12,7 @@ export default function CaixaPadrão({titulo,link,array}){
                 <div className={styles.listaCursos}>                
                     {array.map((aulas) => (
                         <div>
-                            <div className="col-md"><Cartao link={link} nome={aulas.titulo} desc={aulas.descricao}/></div>
+                            <div className="col-md"><Cartao link={link+aulas.id} nome={aulas.titulo} desc={aulas.descricao}/></div>
                         </div>
                     ))} 
                 </div> 

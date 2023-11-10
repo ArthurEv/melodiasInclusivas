@@ -13,7 +13,7 @@ export default function PaginaCursos({titulo,cursos}){
                 <div className={styles.listaCursos}>
                     <div className="row">
                     {cursos.map((cursos) => (
-                            <div className="col-md-4"><Cartao link="/aulas" nome={cursos.titulo} desc={cursos.descricao}/></div>
+                            <div className="col-md-4"><Cartao link={"/aulas/"+cursos.id} nome={cursos.titulo} desc={cursos.descricao}/></div>
                         ))}  
                     </div>
                 </div>

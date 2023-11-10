@@ -12,7 +12,7 @@ export default function CaixaCurso({titulo,link,cursos}){
 
                 <div className={`${styles.cartoes} row`}>
                 {cursos.map((curso) => (
-                    <div className="col-md-4"><Cartao link="/aulas" nome={curso.titulo} desc={curso.descricao}/></div>
+                    <div className="col-md-4"><Cartao link={"/aulas/"+curso.id} nome={curso.titulo} desc={curso.descricao}/></div>
                     ))}  
                 </div>
 

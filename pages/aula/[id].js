@@ -1,20 +1,25 @@
-import Menu from "../components/Menu.js"
-import Footer from "../components/Footer.js"
+import Menu from "../../components/Menu.js"
+import Footer from "../../components/Footer.js"
 import Link from "next/link.js"
 import styles from "../styles/Aula.module.css"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import { useRouter } from 'next/router'
 
 export default function Aula() {
 
+    //esta página está dando problema pq o style não carrega antes do router
+
+    const router = useRouter()
     let [aula, setAula] = useState([])
 
     useEffect(() => {
+        if(!router.isReady) return;
         obtemAula()
-    }, [])
+    }, [router.isReady])
 
     const obtemAula = () => {
-        axios.get('http://127.0.0.1:5000/aula/1/1').then((response) => {
+        axios.get('http://127.0.0.1:5000/aula/'+router.query.id).then((response) => {
              setAula(response.data)
         })
     }
@@ -31,7 +36,7 @@ export default function Aula() {
                 </nav>
 
                 <main>
-                    <div className={styles.caixa}>
+                    <div  className={styles.caixa}>
 
                         <h2>{aula.titulo}</h2>
 
@@ -40,7 +45,7 @@ export default function Aula() {
                         <section>
                             <video src="" type="video/mp4"></video>
 
-                            <Link href="aula"><button>Próxima aula→</button></Link>
+                            <Link href="aula"><button>Próxima aula→</button></Link>                            
                         </section>
                     </div>
                 </main>
