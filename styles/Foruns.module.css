@@ -1,0 +1,81 @@
+.criar{
+    background-color: #FECF4E;
+    height: 15%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 30px;
+}
+
+.criar h2{
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.criar form{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    height: 50%;
+}
+
+.criar input{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.criar input::placeholder {
+    color: black;
+}
+
+.titulo{
+    width: 25%;
+    background-color: #FFDD81;
+}
+
+.assunto{
+    width: 60%;
+    background-color: #FFDD81;
+}
+
+.submit{
+    width: 5%;
+    min-width: 40px;
+    background-color: #DBA521;
+}
+
+.foruns{
+    background-color: #FECF4E;
+    height: 75%;
+    width: 90%;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.foruns h2{
+    margin: 0;
+    text-align: center;
+}
+
+.listaForuns{
+    height: 80%;
+    width: 100%;
+    overflow-y: scroll;
+    padding-right: 10px;
+}
+
+.listaForuns::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+.listaForuns::-webkit-scrollbar-track {
+    display: none;
+}
+  
+.listaForuns::-webkit-scrollbar-thumb {
+    background-color: #DBA521;
+    border-radius: 50px; 
+}

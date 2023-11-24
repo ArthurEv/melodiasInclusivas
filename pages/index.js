@@ -32,8 +32,6 @@ export default function Home() {
 
             <a href="/cursos" className={styles.submit}>Entrar</a>
 
-            <Link href="/atualizar" className={styles.esqueceu}>Esqueceu sua senha?</Link>
-
             <button className={styles.cadastrar}><Link href="/cadastro">Cadastrar</Link></button>
           </form>
         </div>

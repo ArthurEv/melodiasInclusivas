@@ -9,19 +9,19 @@ import axios from "axios"
 
 export default function Menu() {
 
-  // let [aluno, setAluno] = useState([])
+  let [aluno, setAluno] = useState({avatar:"",email:"",id:"",nascimento:"",nome:"",responsavel:"",senha:""})
 
-  // useEffect(() => {
-  //     obtemAluno()
-  // }, [])
+  useEffect(() => {
+      obtemAluno()
+      console.log(aluno.avatar)
+  }, [])
 
-  // const obtemAluno = () => {
-  //     axios.get('http://127.0.0.1:5000/aluno/1').then((response) => {
-  //          setAluno(response.data)
-  //          console.log(aluno[0].nome)
+  const obtemAluno = () => {
+      axios.get('http://127.0.0.1:5000/aluno/1').then((response) => {
+           setAluno(response.data[0])
            
-  //     })
-  // }
+      })
+  }
 
   return (
     <>
@@ -33,14 +33,13 @@ export default function Menu() {
           <Navbar.Collapse id="basic-navbar-nav" className={styles.divLinks}>
             <Nav className={`${styles.links} me-auto`}>
               <Nav.Link href="/cursos"><Image src="/menu/cursos.png" width={35} height={35} />Cursos</Nav.Link>
-              <Nav.Link href="/professor"><Image src="/menu/professor.png" width={35} height={35} />Conversar<br />com professor</Nav.Link>
-              <Nav.Link href="/foruns"><Image src="/menu/forum.png" width={35} height={35} />Fórum</Nav.Link>
+              <Nav.Link href="/foruns"><Image src="/menu/forum.png" width={35} height={35} />Fóruns</Nav.Link>
               <div className={styles.usuario}>
-                <img src='/avatares/hipopotamo.png' className={styles.img} />
-                <NavDropdown title="nome de usuário" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="atualizar">Atualizar informações</NavDropdown.Item>
+                <img src={`/avatares/${aluno.avatar}.png`} className={styles.img} />
+                <NavDropdown title={aluno.nome} id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/atualizar"  className={styles.NavDropdown}>Atualizar informações</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/">Sair</NavDropdown.Item>
+                  <NavDropdown.Item href="/" className={styles.NavDropdown}>Sair</NavDropdown.Item>
                 </NavDropdown>
               </div>
             </Nav>
