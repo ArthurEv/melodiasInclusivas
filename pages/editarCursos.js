@@ -104,7 +104,7 @@ export default function EditarCursos() {
                 <div className={styles.acrescentar}>
                     <h2>Acrescentar curso</h2>
 
-                    <div>
+                    <div className={styles.form}>
                         <input
                             type='text'
                             id='titulo'
@@ -208,7 +208,7 @@ export default function EditarCursos() {
                                         </button>
                                     </td>
                                     <td className={styles.pequeno}>
-                                        <Link href={`/editarAulas/${curso.id}`}>Acessar</Link>
+                                        <Link href={`/editarAulas/${curso.id}`}  className={styles.editarAulas}>Acessar</Link>
                                     </td>
                                 </tr>
                             )

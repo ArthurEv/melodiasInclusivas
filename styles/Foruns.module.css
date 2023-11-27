@@ -79,3 +79,19 @@
     background-color: #DBA521;
     border-radius: 50px; 
 }
+
+@media (max-width: 700px){
+    .assunto{
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px){
+    .assunto{
+        width: 40%;
+    }
+
+    .titulo{
+        width: 25%;
+    }
+}

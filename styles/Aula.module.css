@@ -37,7 +37,8 @@
 
 .caixa iframe{
     background-color: black;
-    width: auto;
+    height: 100%;
+    width: 50%;
 }
 
 .caixa button{
@@ -65,6 +66,7 @@
 
     .caixa iframe{
         height: 70%;
+        width: 100%;
     }
 }
 
@@ -74,6 +76,8 @@
     }
 
     .caixa iframe{
-        height: 50%;
+        height: 80%;
+        width: 100%;
     }
+
 }

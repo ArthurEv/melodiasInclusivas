@@ -104,91 +104,95 @@ export default function EditarAulas() {
             <div className={styles.body}>
                 <div className={styles.acrescentar}>
                     <h2>Acrescentar aula de {curso.titulo}</h2>
-                    <input
-                        type="text"
-                        placeholder="Título"
-                        name="titulo"
-                        id="titulo"
-                        onChange={(e) => setTitulo(e.target.value)}
-                        value={titulo}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Descrição"
-                        name="descricao"
-                        id="descricao"
-                        onChange={(e) => setDescricao(e.target.value)}
-                        value={descricao}
-                    />
-                    <input
-                        type="text"
-                        placeholder="Link"
-                        name="video"
-                        id="video"
-                        className={styles.inputMaior}
-                        onChange={(e) => setVideo(e.target.value)}
-                        value={video}
-                    />
-                    <input
-                        type="number"
-                        placeholder="Número"
-                        name="numero"
-                        id="numero"
-                        onChange={(e) => setNumero(e.target.value)}
-                        value={numero}
-                    />
 
-                    <button onClick={salvarAula}>
-                        Salvar
-                    </button>
-                    <button onClick={limparFormulario}>
-                        Limpar
-                    </button>
+                    <div div className={styles.form}>
 
-                    <button><Link href="/editarCursos">Voltar</Link></button>
+                        <input
+                            type="text"
+                            placeholder="Título"
+                            name="titulo"
+                            id="titulo"
+                            onChange={(e) => setTitulo(e.target.value)}
+                            value={titulo}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Descrição"
+                            name="descricao"
+                            id="descricao"
+                            onChange={(e) => setDescricao(e.target.value)}
+                            value={descricao}
+                        />
+                        <input
+                            type="text"
+                            placeholder="Link"
+                            name="video"
+                            id="video"
+                            className={styles.inputMaior}
+                            onChange={(e) => setVideo(e.target.value)}
+                            value={video}
+                        />
+                        <input
+                            type="number"
+                            placeholder="Número"
+                            name="numero"
+                            id="numero"
+                            onChange={(e) => setNumero(e.target.value)}
+                            value={numero}
+                        />
+
+                        <button onClick={salvarAula}>
+                            Salvar
+                        </button>
+                        <button onClick={limparFormulario}>
+                            Limpar
+                        </button>
+
+                        <button><Link href="/editarCursos">Voltar</Link></button>
+                    </div>
                 </div>
 
-                <div className={styles.lista}>
+                    <div className={styles.lista}>
 
-                    <h2>Lista de aulas</h2>
+                        <h2>Lista de aulas</h2>
 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th className={styles.grande}>Título</th>
-                                <th className={styles.medio}>Descrição</th>
-                                <th className={styles.grande}>Link</th>
-                                <th className={styles.pequeno}>Número</th>
-                                <th className={styles.pequeno}>Ações</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            {aulas.map((aula) => (
-                                <tr key={aula.id}>
-                                    <td className={styles.grande}>{aula.titulo}</td>
-                                    <td className={styles.medio}>{aula.descricao}</td>
-                                    <td className={styles.grande}><Link href={aula.video}>{aula.video}</Link></td>
-                                    <td className={styles.pequeno}>{aula.numero}</td>
-                                    <td className={styles.pequeno}>
-                                        <button onClick={() => {
-                                            editarAula(aula)
-                                        }}>
-                                            <Image src="/editar.png" width={25} height={25} />
-                                        </button>
-                                        <button onClick={() => {
-                                            excluirAula(aula.id)
-                                        }}>
-                                            <Image src="/deletar.png" width={25} height={25} />
-                                        </button>
-                                    </td>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th className={styles.grande}>Título</th>
+                                    <th className={styles.medio}>Descrição</th>
+                                    <th className={styles.grande}>Link</th>
+                                    <th className={styles.pequeno}>Número</th>
+                                    <th className={styles.pequeno}>Ações</th>
                                 </tr>
-                            )
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+
+                            <tbody>
+                                {aulas.map((aula) => (
+                                    <tr key={aula.id}>
+                                        <td className={styles.grande}>{aula.titulo}</td>
+                                        <td className={styles.medio}>{aula.descricao}</td>
+                                        <td className={styles.grande}><Link href={aula.video}>{aula.video}</Link></td>
+                                        <td className={styles.pequeno}>{aula.numero}</td>
+                                        <td className={styles.pequeno}>
+                                            <button onClick={() => {
+                                                editarAula(aula)
+                                            }}>
+                                                <Image src="/editar.png" width={25} height={25} />
+                                            </button>
+                                            <button onClick={() => {
+                                                excluirAula(aula.id)
+                                            }}>
+                                                <Image src="/deletar.png" width={25} height={25} />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-        </>
-    )
+            </>
+            )
 }

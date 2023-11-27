@@ -12,6 +12,9 @@
     border-radius: 30px;
     box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
     height: 22%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .body h2{
@@ -19,6 +22,14 @@
     color: #815600;
     margin: 0;
     padding: 0;
+}
+
+.form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 60%;
 }
 
 .acrescentar input{
@@ -70,8 +81,11 @@
     height: 10%;
 }
 
-.lista a{
-    text-decoration: underline;
+.editarAulas{
+    background-color: #DBA521;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .lista table{
@@ -90,6 +104,11 @@
     width: 100%;  
 }
   
+.lista tr{
+    padding: 5px 0;
+    border-bottom: 1px solid #DBA521;
+}
+
 .lista tbody{
     overflow-y: scroll;
     height: 100%;
@@ -124,4 +143,14 @@
 .lista tbody::-webkit-scrollbar-thumb {
     background-color: #DBA521;
     border-radius: 50px; 
+}
+
+@media (max-width: 800px){
+    .lista{
+        height: 65%;
+    }
+
+    .acrescentar{
+        height: 30%;
+    }
 }
