@@ -56,13 +56,6 @@
 }
 
 @media(max-width:650px){
-    .caixa h2{
-        font-size: 1.5rem;
-    }
-
-    .caixa p{
-        font-size: 0.8rem;
-    }
 
     .caixa iframe{
         height: 70%;
@@ -71,9 +64,6 @@
 }
 
 @media(max-width:450px){
-    .caixa h2{
-        font-size: 1.3rem;
-    }
 
     .caixa iframe{
         height: 80%;
