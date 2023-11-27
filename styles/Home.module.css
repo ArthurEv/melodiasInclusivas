@@ -69,10 +69,7 @@
   background-color: #B58000;
   border-radius: 20px;
   padding: 8px 20px;
-}
-
-.esqueceu{
-  text-decoration: underline;
+  border: none;
 }
 
 .cadastrar{

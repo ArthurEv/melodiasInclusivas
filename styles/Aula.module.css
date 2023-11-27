@@ -35,9 +35,9 @@
     flex-wrap: wrap;
 }
 
-.caixa video{
+.caixa iframe{
     background-color: black;
-    height: 100%;
+    width: auto;
 }
 
 .caixa button{
@@ -49,7 +49,7 @@
 }
 
 @media(max-width:830px){
-    .caixa video{
+    .caixa iframe{
         height: 90%;
     }
 }
@@ -63,7 +63,7 @@
         font-size: 0.8rem;
     }
 
-    .caixa video{
+    .caixa iframe{
         height: 70%;
     }
 }
@@ -73,7 +73,7 @@
         font-size: 1.3rem;
     }
 
-    .caixa video{
+    .caixa iframe{
         height: 50%;
     }
 }

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import Link from "next/link"
+import styles from '../../styles/Editar.module.css'
+import Image from "next/image"
 
 export default function EditarAulas() {
 
@@ -18,9 +20,10 @@ export default function EditarAulas() {
     const [numero, setNumero] = useState('')
 
     useEffect(() => {
+        if (!router.isReady) return;
         obtemAulas()
         obtemCurso()
-    }, [])
+    }, [router.isReady])
 
     const obtemAulas = () => {
         axios.get('http://127.0.0.1:5000/aulas/' + router.query.id).then((response) => {
@@ -98,72 +101,93 @@ export default function EditarAulas() {
                 <title>Editar Aulas: {curso.titulo}</title>
             </Head>
 
-            <div>
-                <h1>Editar aulas do curso de {curso.titulo}</h1>
+            <div className={styles.body}>
+                <div className={styles.acrescentar}>
+                    <h2>Acrescentar aula de {curso.titulo}</h2>
+                    <input
+                        type="text"
+                        placeholder="Título"
+                        name="titulo"
+                        id="titulo"
+                        onChange={(e) => setTitulo(e.target.value)}
+                        value={titulo}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Descrição"
+                        name="descricao"
+                        id="descricao"
+                        onChange={(e) => setDescricao(e.target.value)}
+                        value={descricao}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Link"
+                        name="video"
+                        id="video"
+                        className={styles.inputMaior}
+                        onChange={(e) => setVideo(e.target.value)}
+                        value={video}
+                    />
+                    <input
+                        type="number"
+                        placeholder="Número"
+                        name="numero"
+                        id="numero"
+                        onChange={(e) => setNumero(e.target.value)}
+                        value={numero}
+                    />
 
-                <h2>Acrescentar aula</h2>
-                <input
-                    type="text"
-                    placeholder="Título da aula"
-                    name="titulo"
-                    id="titulo"
-                    onChange={(e) => setTitulo(e.target.value)}
-                    value={titulo}
-                />
-                <input
-                    type="text"
-                    placeholder="Descrição da aula"
-                    name="descricao"
-                    id="descricao"
-                    onChange={(e) => setDescricao(e.target.value)}
-                    value={descricao}
-                />
-                <input
-                    type="text"
-                    placeholder="Link da aula"
-                    name="video"
-                    id="video"
-                    onChange={(e) => setVideo(e.target.value)}
-                    value={video}
-                />
-                <input
-                    type="number"
-                    placeholder="Número da aula"
-                    name="numero"
-                    id="numero"
-                    onChange={(e) => setNumero(e.target.value)}
-                    value={numero}
-                />
+                    <button onClick={salvarAula}>
+                        Salvar
+                    </button>
+                    <button onClick={limparFormulario}>
+                        Limpar
+                    </button>
 
-                <button onClick={salvarAula}>
-                    Salvar
-                </button>
-                <button onClick={limparFormulario}>
-                    Limpar
-                </button>
+                    <button><Link href="/editarCursos">Voltar</Link></button>
+                </div>
 
-                <h2>Lista de aulas</h2>
-                <ul>
-                    {aulas.map((aula) => {
-                        return (
-                            <li key={aula.id}>
-                                Título: {aula.titulo} Descrição: {aula.descricao} Link: {aula.video} Número: {aula.numero}
-                                <button onClick={() => {
-                                    editarAula(aula)
-                                }}>
-                                    Editar
-                                </button>
-                                <button onClick={() => {
-                                    excluirAula(aula.id)
-                                }}>
-                                    Excluir
-                                </button>
-                            </li>
-                        )
-                    })}
-                </ul>
+                <div className={styles.lista}>
 
-                <button><Link href="/editarCursos">Voltar</Link></button>
+                    <h2>Lista de aulas</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className={styles.grande}>Título</th>
+                                <th className={styles.medio}>Descrição</th>
+                                <th className={styles.grande}>Link</th>
+                                <th className={styles.pequeno}>Número</th>
+                                <th className={styles.pequeno}>Ações</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {aulas.map((aula) => (
+                                <tr key={aula.id}>
+                                    <td className={styles.grande}>{aula.titulo}</td>
+                                    <td className={styles.medio}>{aula.descricao}</td>
+                                    <td className={styles.grande}><Link href={aula.video}>{aula.video}</Link></td>
+                                    <td className={styles.pequeno}>{aula.numero}</td>
+                                    <td className={styles.pequeno}>
+                                        <button onClick={() => {
+                                            editarAula(aula)
+                                        }}>
+                                            <Image src="/editar.png" width={25} height={25} />
+                                        </button>
+                                        <button onClick={() => {
+                                            excluirAula(aula.id)
+                                        }}>
+                                            <Image src="/deletar.png" width={25} height={25} />
+                                        </button>
+                                    </td>
+                                </tr>
+                            )
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     )

@@ -45,7 +45,7 @@ export default function Aula() {
     return (
         <>
             <header>
-                <title>Aula:</title>
+                <title>Aula: {aula.titulo}</title>
                 
             </header>
 
@@ -63,7 +63,7 @@ export default function Aula() {
                         <p>{aula.descricao}</p>
 
                         <section>
-                            <iframe src="https://www.youtube.com/embed/DzgRKJTMVEQ" title="Aprenda os fundamentos do violão" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe src={aula.video} title={aula.titulo} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                             {botao}                      
                         </section>
                     </div>

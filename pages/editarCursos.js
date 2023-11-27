@@ -2,6 +2,8 @@ import Head from "next/head"
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import Link from "next/link"
+import styles from '../styles/Editar.module.css'
+import Image from "next/image"
 
 export default function EditarCursos() {
 
@@ -70,7 +72,7 @@ export default function EditarCursos() {
             }).catch((error) => {
                 console.log(error)
                 alert('Erro ao editar curso')
-            })	
+            })
         }
     }
 
@@ -98,94 +100,122 @@ export default function EditarCursos() {
                 <title>Editar Cursos</title>
             </Head>
 
-            <div>
-                <h1>Editar cursos</h1>
+            <div className={styles.body}>
+                <div className={styles.acrescentar}>
+                    <h2>Acrescentar curso</h2>
 
-                <h2>Acrescentar curso</h2>
-                <input
-                    type='text'
-                    id='titulo'
-                    name='titulo'
-                    placeholder="Título"
-                    required
-                    value={titulo}
-                    onChange={(e) => { setTitulo(e.target.value) }}
-                />
+                    <div>
+                        <input
+                            type='text'
+                            id='titulo'
+                            name='titulo'
+                            placeholder="Título"
+                            required
+                            value={titulo}
+                            onChange={(e) => { setTitulo(e.target.value) }}
+                        />
 
-                <input
-                    type='text'
-                    id='descricao'
-                    name='descricao'
-                    placeholder="Descrição"
-                    required
-                    value={descricao}
-                    onChange={(e) => { setDescricao(e.target.value) }}
-                />
+                        <input
+                            type='text'
+                            id='descricao'
+                            name='descricao'
+                            placeholder="Descrição"
+                            required
+                            value={descricao}
+                            onChange={(e) => { setDescricao(e.target.value) }}
+                        />
 
-                <input
-                    type='number'
-                    id='idade'
-                    name='idade'
-                    placeholder="Idade recomendada"
-                    required
-                    value={idade}
-                    onChange={(e) => { setIdade(e.target.value) }}
-                />
+                        <input
+                            type='number'
+                            id='idade'
+                            name='idade'
+                            placeholder="Idade"
+                            required
+                            value={idade}
+                            onChange={(e) => { setIdade(e.target.value) }}
+                        />
 
-                <input
-                    type='number'
-                    id='quantidade_aulas'
-                    name='quantidade_aulas'
-                    placeholder="Quantide de aulas"
-                    required
-                    value={quantidade_aulas}
-                    onChange={(e) => { setQuantidade_aulas(e.target.value) }}
-                />
+                        <input
+                            type='number'
+                            id='quantidade_aulas'
+                            name='quantidade_aulas'
+                            placeholder="Aulas"
+                            required
+                            value={quantidade_aulas}
+                            onChange={(e) => { setQuantidade_aulas(e.target.value) }}
+                        />
 
-                <select
-                    id='professor'
-                    name='professor'
-                    required
-                    onChange={(e) => { setProfessor(e.target.value) }}
-                    value={professor}
-                >
-                    <option value="" disabled selected>Selecione um professor</option>
-                    {professores.map((professor) => (
-                        <option value={professor.id}>{professor.nome}</option>
-                    )
-                    )}
-                </select>
-
-                <button onClick={salvarCurso}>
-                    Salvar
-                </button>
-
-                <button onClick={limparFormulario}>
-                    Limpar
-                </button>
+                        <select
+                            id='professor'
+                            name='professor'
+                            required
+                            onChange={(e) => { setProfessor(e.target.value) }}
+                            value={professor}
+                        >
+                            <option value="" disabled selected>Professor</option>
+                            {professores.map((professor) => (
+                                <option value={professor.id}>{professor.nome}</option>
+                            )
+                            )}
+                        </select>
 
 
-                <h2>Lista de cursos</h2>
+                        <button onClick={salvarCurso}>
+                            Salvar
+                        </button>
 
-                <ul>
-                    {cursos.map((curso) => (
-                        <li key={curso.id}>
-                            Curso: {curso.titulo} Descrição: {curso.descricao} Idade: {curso.idade} Quantidade de aulas: {curso.quantidade_aulas} Professor: {curso.nome}
-                            <button onClick={() => {
-                                editarCurso(curso)
-                            }}>
-                                Editar
-                            </button>
-                            <button onClick={() => {
-                                excluirCurso(curso.id)
-                            }}>
-                                Excluir
-                            </button>
-                            <Link href={`/editarAulas/${curso.id}`}>Editar aulas</Link>
-                        </li>
-                    )
-                    )}
-                </ul>
+                        <button onClick={limparFormulario}>
+                            Limpar
+                        </button>
+
+                    </div>
+                </div>
+
+                <div className={styles.lista}>
+                    <h2>Lista de cursos</h2>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th className={styles.medio}>Título</th>
+                                <th className={styles.medio}>Descrição</th>
+                                <th className={styles.pequeno}>Idade</th>
+                                <th className={styles.pequeno}>Aulas</th>
+                                <th className={styles.medio}>Professor</th>
+                                <th className={styles.pequeno}>Ações</th>
+                                <th className={styles.pequeno}>Editar aulas</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            {cursos.map((curso) => (
+                                <tr key={curso.id}>
+                                    <td className={styles.medio}>{curso.titulo}</td>
+                                    <td className={styles.medio}>{curso.descricao}</td>
+                                    <td className={styles.pequeno}>{curso.idade}</td>
+                                    <td className={styles.pequeno}>{curso.quantidade_aulas}</td>
+                                    <td className={styles.medio}>{curso.nome}</td>
+                                    <td className={styles.pequeno}>
+                                        <button onClick={() => {
+                                            editarCurso(curso)
+                                        }}>
+                                            <Image src="/editar.png" width={25} height={25} />
+                                        </button>
+                                        <button onClick={() => {
+                                            excluirCurso(curso.id)
+                                        }}>
+                                            <Image src="/deletar.png" width={25} height={25} />
+                                        </button>
+                                    </td>
+                                    <td className={styles.pequeno}>
+                                        <Link href={`/editarAulas/${curso.id}`}>Acessar</Link>
+                                    </td>
+                                </tr>
+                            )
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </>
     )

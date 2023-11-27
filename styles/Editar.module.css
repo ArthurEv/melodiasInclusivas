@@ -1,0 +1,127 @@
+.body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.acrescentar{
+    background-color: #FECF4E;
+    width: 90%;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 22%;
+}
+
+.body h2{
+    text-align: center;
+    color: #815600;
+    margin: 0;
+    padding: 0;
+}
+
+.acrescentar input{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #DBA521;
+    color: white;
+    width: 100px;
+    border-radius: 15px;
+}
+
+.acrescentar input::placeholder {
+    color: white;
+}
+
+.acrescentar select{
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #DBA521;
+    color: white;
+    border-radius: 15px;
+}
+
+.acrescentar button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #B58000;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.lista{
+    background-color: #FECF4E;
+    width: 90%;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    height: 70%;
+}
+
+.lista h2{
+    padding: 0;
+    margin: 0;
+    height: 10%;
+}
+
+.lista a{
+    text-decoration: underline;
+}
+
+.lista table{
+    width: 100%;
+    display: block;
+    height: 80%;
+}
+
+.lista button{
+    border: none;
+    background: none;
+}
+
+.lista thead, .lista tbody, .lista tr{
+    display: block;
+    width: 100%;  
+}
+  
+.lista tbody{
+    overflow-y: scroll;
+    height: 100%;
+}
+
+.lista th, .lista td {
+  padding: 3px;
+  display: inline-block;
+}
+
+.pequeno{
+    width: 10%;
+    text-align: center;
+}
+
+.medio{
+    width: 20%;
+}
+
+.grande{
+    width: 30%;
+}
+
+.lista tbody::-webkit-scrollbar {
+    width: 5px;
+}
+  
+.lista tbody::-webkit-scrollbar-track {
+    display: none;
+}
+  
+.lista tbody::-webkit-scrollbar-thumb {
+    background-color: #DBA521;
+    border-radius: 50px; 
+}

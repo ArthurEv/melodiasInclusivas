@@ -1,8 +1,9 @@
 import Menu from "../components/Menu.js"
 import Footer from "../components/Footer.js"
 import CaixaCurso from "../components/CaixaCursos.js"
-import { useState, useEffect } from "react"
+import { useState, useEffect, Children } from "react"
 import axios from "axios"
+// import NextAuthSessionProvider from "../src/app/api/auth/[...nextauth]/providers/sessionProvider.js"
 
 export default function Cursos() {
 
@@ -33,6 +34,7 @@ export default function Cursos() {
             </header>
 
             <div className="body">
+                {/* <NextAuthSessionProvider>{children}</NextAuthSessionProvider> */}
                 <nav>
                     <Menu />
                 </nav>
