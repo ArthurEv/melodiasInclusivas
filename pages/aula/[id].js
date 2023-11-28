@@ -1,6 +1,5 @@
 import Menu from "../../components/Menu.js"
 import Footer from "../../components/Footer.js"
-import Link from "next/link"
 import styles from "../../styles/Aula.module.css"
 import { useState, useEffect } from "react"
 import axios from "axios"

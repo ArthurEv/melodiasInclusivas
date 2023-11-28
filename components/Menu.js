@@ -6,6 +6,7 @@ import Image from 'next/image';
 import styles from '../styles/components/Menu.module.css'
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Login from './login.js';
 
 export default function Menu() {
 
